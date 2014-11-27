@@ -18,6 +18,8 @@ public:
 private slots:
     void on_GetHashButton_clicked();
 
+    void on_checkFileButton_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

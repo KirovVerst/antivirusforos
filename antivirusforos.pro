@@ -13,8 +13,12 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    checkFile.cpp \
+    GetHash.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    checkFile.h \
+    GetHash.h
 
 FORMS    += mainwindow.ui

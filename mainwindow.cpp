@@ -3,6 +3,7 @@
 
 /*by Punin Viktor*/
 #include "GetHash.h"
+#include "checkFile.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -18,10 +19,24 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_GetHashButton_clicked()
 {
+    //ToDo: test on big files
     QString FileDir = QFileDialog::getOpenFileName(this, tr("Open File"), "", tr("Files (*.*)"));
+    QString hash = GetHash(FileDir);
+
 
     QMessageBox msgBox;
-    msgBox.setText(GetHash(FileDir));
-    msgBox.setDefaultButton(QMessageBox::Ok);
+    if(hash.isEmpty())
+        msgBox.setText("Can not get the hash of the file.");
+    else
+    {
+        msgBox.setText("Checksum was calculated.");
+        msgBox.setDetailedText(hash);
+    }
     msgBox.exec();
+}
+
+void MainWindow::on_checkFileButton_clicked()
+{
+    QString FileDir = QFileDialog::getOpenFileName(this, tr("Open File"), "", tr("Files (*.*)"));
+    checkFile(FileDir);
 }

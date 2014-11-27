@@ -1,10 +1,8 @@
 #include "checkFile.h"
-#include <QFile>
-#include <QIODevice>
-#include <QMessageBox>
-#include <QByteArray>
-void checkFile(QFile & file){
 
+void checkFile(QString & fileName){
+
+    QFile file(fileName);
     if (!file.open(QIODevice::ReadOnly)){
         QMessageBox msgBox;
         msgBox.setText("File is not opened");
@@ -13,12 +11,13 @@ void checkFile(QFile & file){
     }
 
     QByteArray dataFile = file.readAll();
-    QFile base("../../../data/virusbase");
+    QFile base("data/virusbase");
 
     if (!base.open(QIODevice::ReadOnly)){
         QMessageBox msgBox;
         msgBox.setText("Base of signatures not found");
         msgBox.exec();
+        return;
     }
 
     QVector<QByteArray> foundViruses;
@@ -49,6 +48,7 @@ void checkFile(QFile & file){
     }else{
         result = "File is not infected";
     }
+    file.close();
     msgBox.setText(result);
     msgBox.exec();
 
