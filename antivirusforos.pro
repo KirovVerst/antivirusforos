@@ -16,7 +16,7 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     checkFile.cpp \
     GetHash.cpp
-
+win32:RC_FILE = antivirusforos.rc
 HEADERS  += mainwindow.h \
     checkFile.h \
     GetHash.h
