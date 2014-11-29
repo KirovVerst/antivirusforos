@@ -1,6 +1,6 @@
 #include "checkFile.h"
 
-void checkFile(QString & fileName){
+void checkFile(const QString & fileName){
 
     QFile file(fileName);
     if (!file.open(QIODevice::ReadOnly)){

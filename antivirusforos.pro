@@ -15,10 +15,14 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     checkFile.cpp \
-    GetHash.cpp
-win32:RC_FILE = antivirusforos.rc
+    GetHash.cpp \
+    fileSystem.cpp
+
 HEADERS  += mainwindow.h \
     checkFile.h \
-    GetHash.h
+    GetHash.h \
+    fileSystem.h
+
+win32:RC_FILE = antivirusforos.rc
 
 FORMS    += mainwindow.ui

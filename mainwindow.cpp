@@ -1,7 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-/*by Punin Viktor*/
 #include "GetHash.h"
 #include "checkFile.h"
 

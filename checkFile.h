@@ -7,6 +7,6 @@
 #include <QMessageBox>
 #include <QByteArray>
 
-void checkFile(QString & );
+void checkFile(const QString & );
 
 #endif // CHECKFILE_H
